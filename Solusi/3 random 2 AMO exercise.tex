@@ -1,0 +1,8 @@
+\input{Soal/3 random 2 AMO exercise}
+\begin{solusi}
+    Misalkan bilangan palindrom 6 digit tersebut adalah $x=\overline{4bccb4}$ dimana $b,c$ adalah bilangan bulat non-negatif. Perhatikan bahwa $11 \mid x$ jika dimisalkan suatu $k,i \in \NN$ sehingga $x = i(i+1)\dots(i+k)$, maka haruslah $3 \ge k \ge 2$ karena jika $k = 1$ maka $x = i(i+k) \equiv 0, 2, 6 \mod 10 \not \equiv 4 \mod 10$ dan jika $k \ge 4$ maka $x$ adalah perkalian 5 atau lebih bilangan asli berurutan sehingga $120 = 5! \mid x \implies x \equiv 0 \mod 10 \not \equiv 4 \mod 10$
+    
+    Perhatikan bahwa karena $x$ merupakan perkalian 3 atau 4 bilangan asli berurutan, maka haruslah $3 \mid x$ juga. Karena $x \equiv 4 \mod 10$ maka $i, i+1, i+2, i+3$ tidak boleh memiliki digit terakhir 0 atau 5. Jika $k=3$ perhatikan karena $400000 < x < 500000$ maka haruslah $160000 = 20^4 < x=i(i+1)(i+2)(i+3) < 30^4 = 810000$ yang menunjukkan $i=21,26$. Jika $i=21$ maka $x=255024$, tidak memenuhi. Jika $i=26$, maka $11 \nmid x=26\cdot27\cdot28\cdot29$, tidak memenuhi. 
+    
+    Berarti tersisa kasus $k=2$ atau $x=i(i+1)(i+2)$. Perhatikan bahwa haruslah $343000 = 70^3 < x < 80^3 = 512000$. Karena $11\mid x$ maka $i=76,77$. Coba satu-satu, ditemukan bahwa $i=77$ sehingga $x=77\cdot78\cdot79=474474$ dengan perkalian digit-digitnya adalah $4+7+4+4+7+4=30$.
+\end{solusi}

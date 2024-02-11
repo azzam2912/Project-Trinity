@@ -1,0 +1,21 @@
+\input{Soal/2 Semifinal PSN IPB 2023}
+\begin{solusi}
+\begin{align*}
+    \sum \dfrac{1}{\sqrt{a^3+b}}
+    &\overset{AM-GM}{\le}
+    \sum\dfrac{1}{\sqrt{2a\sqrt{ab}}}\\
+    &=
+    \dfrac{1}{\sqrt{2}}\sum\dfrac{1}{\sqrt{a}}\dfrac{1}{\sqrt{\sqrt{{ab}}}}\\
+    &\overset{CS}{\le}
+    \dfrac{1}{\sqrt{2}}\sqrt{\left(\sum\dfrac{1}{a}\right)\left(\sum\dfrac{1}{\sqrt{ab}}\right)}\\
+    &\overset{AM-GM}{\le}
+    \dfrac{1}{\sqrt{2}}\sqrt{\left(\sum\dfrac{1}{a}\right)\left(\sum\dfrac{\frac{1}{a}+\frac{1}{b}}{2}\right)}\\
+    &=
+    \dfrac{1}{\sqrt{2}}\sqrt{\left(\sum\dfrac{1}{a}\right)\left(\sum\dfrac{1}{a}\right)}\\
+    &=
+    \dfrac{1}{\sqrt{2}}\left(\sum\dfrac{1}{a}\right)\\
+    &=
+    \dfrac{3}{\sqrt{2}}
+\end{align*}
+dengan kesamaan terjadi saat $a=b=c=1$. Terbukti. \qed
+\end{solusi}

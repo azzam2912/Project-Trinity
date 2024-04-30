@@ -1,0 +1,72 @@
+\input{Soal/5 USAJMO 2024 Problem 5}
+\begin{solusi}
+    Misalkan $P(x,y)$ asersi pada fungsi di soal.\\
+    $P(0,0)$ menghasilkan
+    \begin{align*}
+        f(0)+0 &= f(f(0))+f(0)\\
+        f(f(0)) &= 0
+    \end{align*}
+    $P(f(0),0)$ mengakibatkan
+    \begin{align*}
+        f(f(0)^2)+0 &= f(f(f(0))) + f(0)\\
+        f(f(0)^2) &= f(0) + f(0)\\
+        f(f(0)^2) &=2f(0).
+    \end{align*}
+    $P(f(0),f(0)^2)$ menyebabkan
+    \begin{align*}
+        f(0)+2f(0)^2f(f(0)) &= f(f(f(0)))+f(f(0)^2)\\
+        f(0)+2f(0)^2 \cdot 0 &= f(0)+2f(0)\\
+        f(0) &= 0
+    \end{align*}
+    Maka $P(x,0)$ menyebabkan
+    \begin{align*}
+        f(x^2)+0 &= f(f(x)) + f(0)\\
+        f(x^2) &= f(f(x))
+    \end{align*}
+    Selanjutnya $P(x,x^2)$ mengakibatkan
+    \begin{align*}
+        f(0) + 2x^2f(x) &= f(f(x))+f(x^2)\\
+        0+2x^2f(x) &= f(x^2)+f(x^2)\\
+        x^2f(x) &= f(x^2) = f(f(x))
+    \end{align*}
+    sehingga $f(f(0))=f(0)=0$.
+    Di lain sisi $P(0,y)$ membuat
+    \begin{align*}
+        f(-y)+2yf(0) &= f(f(0)) + f(y)\\
+        f(-y) &= f(y)
+    \end{align*}
+    yang menunjukkan $f$ adalah fungsi genap. Sekarang perhatikan untuk $x,y > 0$, asersi $P(\sqrt{x}, y)$ dan $P(\sqrt{y},x)$ mengakibatkan
+    \begin{align*}
+        f(x-y) + 2yf(\sqrt{x}) &= f(f(\sqrt{x}))+f(y)\\
+        f(x-y) + 2yf(\sqrt{x}) &= f(x)+f(y)
+    \end{align*}
+    dan
+    \begin{align*}
+        f(y-x) + 2xf(\sqrt{y}) &= f(f(\sqrt{y}))+f(x)\\
+        f(y-x) + 2xf(\sqrt{y}) &= f(y)+f(x).
+    \end{align*}
+    Karena $f$ fungsi genap, maka $f(x-y)=f(y-x)$ sehingga didapat
+    \begin{align*}
+        2yf(\sqrt{x}) &= 2xf(\sqrt{y})\\
+        f(\sqrt{x}) &= \dfrac{f(\sqrt{y})}{y}\cdot x.
+    \end{align*}
+    Jika $y$ dibuat menjadi fix point dan $x$ sembarang, maka $\dfrac{f(\sqrt{y})}{y}=c$ adalah suatu konstanta real sehingga $f(\sqrt{x})=cx$ atau $f(x)=cx^2$. Oleh karena itu, substitusi kembali $P(x,y)$ pada soal akan menghasilkan
+    \begin{align*}
+        f(x^2-y)+2yf(x)&=f(f(x))+f(y)\\
+        c(x^2-y)^2+2ycx^2 &= f(cx^2) + cy^2\\
+        cx^4-2cx^2y+cy^2 + 2cx^2y &= c\cdot c(cx^2)^2 + cy^2\\
+        cx^4 &= c^3x^4\\
+        cx^4(c-1)(c+1)&=0\\
+        c &= -1,0,1
+    \end{align*}
+    Cek kembali ke soal, didapatkan fungsi $f$ yang memenuhi adalah
+    \begin{align*}
+        f(x) = 
+        \begin{cases}
+            -x^2\\
+            0\\
+            x^2
+        \end{cases}
+    \end{align*}
+     untuk sembarang $x \in \RR$
+\end{solusi}

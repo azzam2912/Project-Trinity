@@ -1,0 +1,18 @@
+\input{Soal/7 random 4}
+\begin{solusi}
+    Perhatikan bahwa $f(f(0))=f(f(1))=1$. Oleh karena itu didapat
+    \begin{align*}
+        f(f(f(1))) &= f(1)\\
+        (f(1))^2-f(1)+1 &= f(1)\\
+        (f(1)-1)^2 &= 0\\
+        f(1) &= 1.
+    \end{align*}
+    Sehingga, akan kembali didapatkan $f(f(f(1)))=f(1)=1$. Maka kita punya
+    \begin{align*}
+        f(f(f(0))) &= f(f(f(1)))\\
+        (f(0))^2-f(0)+1 &= 1\\
+        f(0)(f(0)-1) &= 0\\
+        f(0) = 0 &\text{ atau } f(0)=1.
+    \end{align*}
+    Jika $f(0)=0$ maka $1=f(f(0))=f(0)$, kontradiksi. Oleh karena itu haruslah $\boxed{f(0)=1}$.
+\end{solusi}

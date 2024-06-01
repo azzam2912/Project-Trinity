@@ -1,0 +1,51 @@
+\input{Soal/6 random 3}
+\begin{solusi}
+    Perhatikan bahwa $a$ tidak boleh berupa bilangan bulat. Jika $a$ bulat, karena $x$ bilangan asli, maka persamaan di soal akan menjadi
+    \begin{align*}
+        4ax &= x + a\cdot ax\\
+        4a &= 1 + a^2\\
+        (a-2)^2 &= 3\\
+        a &= 2 \pm \sqrt{3} 
+    \end{align*}
+    yang menunjukkan $a$ bukan bilangan bulat, kontradiksi. Oleh karena itu, haruslah $a$ bilangan real tidak bulat.
+    
+    Sekarang, karena $x$ bilangan asli dan $\floor{ax}$ bilangan bulat maka
+    \begin{align*}
+        0 < x &= 4\floor{ax} - \floor{a\floor{ax}} = \floor{4\floor{ax} - a\floor{ax}} = \floor{(4-a)\floor{ax}}.
+    \end{align*}
+    Oleh karena itu haruslah
+    \begin{align*}
+        0 < (4-a)\floor{ax}
+    \end{align*}
+    yang dipenuhi jika dan hanya jika $4-a < 0$ dan $\floor{ax} < 0$ atau $4-a > 0$ dan $\floor{ax} > 0$. Akan dibagi kasus berdasarkan batasan nilai $a$ yang mungkin tersebut.
+    \begin{itemize}
+        \item Kasus I. $4-a < 0$ dan $\floor{ax} < 0$.\\
+        Perhatikan bahwa $a > 4 > 0$ yang menyebabkan $ax > 0$ atau $\floor{ax} \ge 0$. Ini kontradiksi dengan $\floor{ax} < 0$. Kasus ini tidak memenuhi.
+        \item Kasus II. $4-a > 0$ dan $\floor{ax} > 0$.\\
+        Perhatikan bahwa $a < 4$. Karena $\floor{ax} > 0 \implies ax > 0$ dan $x > 0$, maka $a > 0$. Oleh karena itu kasus ini masih memungkinkan dan menyebabkan $0 < a < 4$.
+    \end{itemize}
+    
+    Perhatikan, jika $0 < a < 1$ maka saat dipilih $x=1$, persamaan di soal akan menjadi
+    \begin{align*}
+        4\floor{a} &= 1 + \floor{a\floor{a}}\\
+        4 \cdot 0 &= 1 + \floor{a \cdot 0}\\
+        0 &= 1 + 0,
+    \end{align*}
+    kontradiksi. Oleh karena itu, $1 \le a < 4$.
+    
+    Sekarang misalkan $a = n + t$ dimana $n \in \{1,2,3\}$ dan $0 < t < 1$ (ingat, $a$ bukan bulat). Dari properti fungsi lantai, didapat $0 \le \floor{tnx} \le tnx < nx$, dan $0 \le \floor{t\floor{tx}} \le \floor{tx} \le tx < x$. Oleh karena itu, dari soal akan diperoleh
+    \begin{align*}
+        4\floor{nx+tx} &= x + \floor{n\floor{nx+tx}+t\floor{nx+tx}}\\
+        4(nx+\floor{tx}) &= x + \floor{n(nx+\floor{tx})+t(nx+\floor{tx})}\\
+        4nx + 4\floor{tx} &= x + n^2x + n\floor{tx} + \floor{tnx} + \floor{t\floor{tx}}\\
+        (4-n)(nx+\floor{tx}) = x + \floor{tnx} + \floor{t\floor{tx}}&<x+nx+x\\
+        (1-n)(n-2)x+(4-n)\floor{tx}&<0
+    \end{align*}
+    dengan mengecek satu per satu untuk $n=1,2,3$ pada ketaksamaan terakhir dan mempertimbangkan fakta $0 \le \floor{tx} \le x$, didapat
+    \begin{itemize}
+        \item $n=1$, maka $3\floor{tx} < 0$, kontradiksi.
+        \item $n=2$, maka $2\floor{tx} < 0$, kontradiksi.
+        \item $n=3$, maka $\floor{tx} < 2x$, jelas memenuhi.
+    \end{itemize}
+    Oleh karena itu didapat $n=3$ memenuhi sehingga $\floor{a} = n = \boxed{3}$.
+\end{solusi}

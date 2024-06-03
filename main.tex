@@ -1,35 +1,4 @@
-\documentclass[11pt]{scrartcl}
-\usepackage{graphicx}
-\graphicspath{{./}}
-\usepackage[sexy]{evan}
-\usepackage[normalem]{ulem}
-\usepackage{hyperref}
-\usepackage{mathtools}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    pdfpagemode=FullScreen,
-    }
-
-\renewcommand{\dangle}{\measuredangle}
-
-\renewcommand{\baselinestretch}{1.5}
-
-\addtolength{\oddsidemargin}{-0.4in}
-\addtolength{\evensidemargin}{-0.4in}
-\addtolength{\textwidth}{0.8in}
-% \addtolength{\topmargin}{-0.2in}
-% \addtolength{\textheight}{1in} 
-
-
-\setlength{\parindent}{0pt}
-
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
+\input{settings}
 
 \title{Project Trinity}
 \author{Azzam (IG: haxuv.world)}
@@ -43,34 +12,10 @@
 (Hampir) Semua soal non geometri yang saya suka. 
 
 \section{Soal}
-\begin{enumerate}
-    \item \input{Soal/1 random}
-    \item \input{Soal/2 Semifinal PSN IPB 2023}
-    \item \input{Soal/3 random 2 AMO exercise}
-    \item \input{Soal/4 All Russian Olympiad 1998 Problem 6 Grade 10}
-    \item \input{Soal/5 USAJMO 2024 Problem 5}
-    \item \input{Soal/6 random 3}
-    \item \input{Soal/7 random 4}
-\end{enumerate}
+\input{problems}
 
 \newpage
 \section{Solusi}
-\begin{enumerate}
-    \item \input{Solusi/1 random}
-    \newpage
-    \item \input{Solusi/2 Semifinal PSN IPB 2023}
-    \newpage
-    \item \input{Solusi/3 random 2 AMO exercise}
-    \newpage
-    \item \input{Solusi/4 All Russian Olympiad 1998 Problem 6 Grade 10}
-    \newpage
-    \item \input{Solusi/5 USAJMO 2024 Problem 5}
-    \newpage
-    \item \input{Solusi/6 random 3}
-    \newpage
-    \item \input{Solusi/7 random 4}
-    \newpage
-    
-\end{enumerate}
+\input{solutions}
 
 \end{document}

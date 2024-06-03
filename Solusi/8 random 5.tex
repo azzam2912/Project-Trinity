@@ -1,0 +1,28 @@
+\input{Soal/8 random 5}
+\begin{solusi}
+    Misalkan $x=da$, $y=db$ dimana $a,b,d \in \ZZ^+$, dengan $gcd(a,b)=1$. Persamaan di soal akan menjadi
+    \begin{align*}
+        da-db-\dfrac{da}{db}+\dfrac{d^5a^5}{d^5b^5} &= 2024\\
+        dab^5-db^6-ab^4+a^5 &= 2024b^5\\
+        a^5 &= b^4(-dab+db^2+a+2024b).
+    \end{align*}
+    Pada persamaan terakhir, $b^4 \mid a^5$. Namun, karena $gcd(a,b)=1$, maka haruslah $b^4=1 \iff b=1$. Oleh karena itu didapat
+    \begin{align*}
+        a^5 &= -da+d+a+2024\\
+        a^5 + da - a - d + 1 &= 2025\\
+        a^5 + (d-1)(a-1) &= 2025.
+    \end{align*}
+    Perhatikan bahwa haruslah $1 \le a \le 4$. Karena jika andaikan $a\ge 5$, maka
+    \begin{align*}
+        2025 = a^5 + (d-1)(a-1) \ge 5^5 + 0 = 3125 > 2025,
+    \end{align*}
+    kontradiksi.
+    Sekarang, cek satu persatu nilai $a=1,2,3,4,5$.
+    \begin{itemize}
+        \item Jika $a=1$, maka $1^5+(d-1)(1-1) = 2025$, jelas tidak memenuhi.
+        \item Jika $a=2$, didapat $d=1994$. Ini berakibat $x=da=3998$.
+        \item Jika $a=3$, didapat $d=892$. Ini berakibat $x=da=2676$.
+        \item Jika $a=4$, didapat $d$ tidak bulat, berarti tidak memenuhi.
+    \end{itemize}
+    Dapat disimpulkan bahwa $x$ terkecil yang memenuhi adalah $\boxed{2676}$.
+\end{solusi}

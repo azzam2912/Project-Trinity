@@ -1,0 +1,32 @@
+\input{Soal/14 Baltic Way 2012 Problem 3}
+\begin{solusi}
+    Akan ditunjukkan bahwa ada tepat satu $x \in [n, n+1)$ untuk sembarang $n \in \NN$.
+    Perhatikan jika $x$ bulat, maka
+    \begin{align*}
+        x(x^2+1) &= x^3\\
+        x &= 0
+    \end{align*}    
+    yang kontradiktif dengan syarat $x \ge 1$. Oleh karena itu dapat dimisalkan $x=y+\epsilon$ dimana $y \in \NN$ dan $\epsilon \in (0,1)$. 
+    Perhatikan fungsi $f:\RR\to\RR$ dengan $f(\epsilon) = \epsilon^3+2y\epsilon^2+y^2\epsilon-y$ untuk sembarang $y > 0$. Perhatikan bahwa fungsi ini bersifat monoton naik untuk $\epsilon \ge 0$ karena $f'(\epsilon) = 3\epsilon^2+4y\epsilon+y^2$.
+
+    Karena $f(0) = -y < 0$ dan $f(1)=1+2y+y^2-y=1+y+y^2>0$ maka berdasarkan Intermediate Value Theorem ada $\epsilon \in (0,1)$ yang memenuhi $f(\epsilon)=0$. Karena sebelumnya diketahui $f$ monoton naik, maka ada tepat satu $\epsilon \in (0,1)$ yang memenuhi $f(\epsilon)=0$.
+
+    Dari sini persamaan di soal menjadi menjadi
+    \begin{align*}
+        y((y+\epsilon)^2+1) &= (y+\epsilon)^3\\
+        y^3+2y^2\epsilon+y\epsilon^2+y &= y^3+3y^2\epsilon+3y\epsilon^2+\epsilon^3\\
+        \epsilon^3+2y\epsilon^2+y^2\epsilon-y &= 0\\
+        f(\epsilon) &= 0
+    \end{align*}
+    yang telah terbukti sebelumnya, mempunyai tepat satu solusi $\epsilon \in (0,1)$. Bagian (a) terbukti.
+
+    Sekarang, andaikan ada solusi $x=y+\epsilon$ rasional yang memenuhi soal. Oleh karena itu dapat diasumsikan ada $\epsilon=\frac{a}{b}$ dimana $a,b \in \NN$, $1 \le a<b$, dan $gcd(a,b)=1$ sehingga $f(\epsilon)=0$. Dengan substitutsi nilai $\epsilon = \frac{a}{b}$ ke $f(\epsilon)=0$ didapat
+    \begin{align*}
+        \left(\frac{a}{b}\right)^3+2y\left(\frac{a}{b}\right)^2+y^2\left(\frac{a}{b}\right)-y &= 0\\
+        a^3+2ya^2b+y^2ab^2 &= yb^3
+    \end{align*}
+    lihat sisi kanan persamaan tersebut, $yb^3$, terbagi oleh $b$. Oleh karena itu $b \mid a^3+2ya^2b+y^2ab^2 \implies b \mid a^3$. Kontradiksi dengan syarat $gcd(a,b)=1$ dan $b>1$. 
+
+    Dapat disimpulkan bahwa semua solusi $x$ dari persamaan tersebut irasional. Bagian (b) terbukti.
+    
+\end{solusi}

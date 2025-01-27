@@ -1,0 +1,35 @@
+\input{Soal/13 fungsi bulat 3}
+\begin{solusi}
+    Misal $P(a,b)$ adalah asersi ekspresi di soal. $P(n,n)$ untuk sembarang $n \in \NN$ menghasilkan
+    \begin{align*}
+        f(n)+f(n) \mid n+n \implies f(n) \mid n.
+    \end{align*}
+    Berarti $f(1) \mid 1$ menyebabkan $f(1)=1$. $P(2,1)$ menghasilkan  
+    $$f(2)+f(1) \mid 2+1 \implies f(2)+1 \mid 3 \implies f(2)=2.$$ Akan dibuktikan bahwa $f(n)=n$ untuk semua $n \in \NN$ dengan induksi di $n$.
+    Perhatikan untuk kasus $n=1$ dan $n=2$ jelas benar. Andaikan untuk $n=k\ge 2$ benar bahwa $f(k)=k$. 
+    
+    Observasi untuk $n=k+1$. Asersi $P(k+1,k)$ menghasilkan
+    \begin{align*}
+        f(k+1)+f(k) \mid k+1 + k \implies f(k+1)+k \mid 2k+1.
+    \end{align*}
+    Di lain pihak kita juga punya $f(k+1) \mid k+1$. Oleh karena itu untuk suatu $c,d \in \NN$ dapat dimisalkan $2k+1 = c(f(k+1)+k)$ dan $ k+1 = df(k+1) $
+    sehingga akan didapat
+    \begin{align*}
+        k + k+1 &= cf(k+1)+ck\\
+        k + df(k+1) &= cf(k+1) + ck\\
+        (d-c)f(k+1) &= (c-1)k.
+    \end{align*}
+    Karena $gcd(k+1,k) =1$ dan $f(k+1) \mid k+1$, maka $gcd(f(k+1),k)=1$ sehingga haruslah $f(k+1) \mid c-1$ atau setara dengan
+    \begin{align*}
+        f(k+1) &\mid \dfrac{2k+1}{f(k+1)+k} - 1\\
+        f(k+1)(f(k+1)+k) &\mid 2k+1 - f(k+1) - k\\
+        f(k+1)^2+kf(k+1) &\mid k+1 - f(k+1).
+    \end{align*}
+    Andaikan $f(k+1) \neq k+1$ maka $1 \le f(k+1) < k+1$ sehingga
+    \begin{align*}
+        f(k+1)^2 &\le (k+1)(1-f(k+1)) \le (k+1)0 = 0\\
+    \end{align*}
+    yang merupakan sebuah kontradiksi. Oleh karena itu haruslah $f(k+1)=k+1$.
+
+    Dari induksi matematika, terbukti bahwa $f(n)=n$ untuk semua bilangan asli $n$.
+\end{solusi}

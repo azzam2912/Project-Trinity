@@ -1,0 +1,30 @@
+\input{Soal/11 fungsi bulat 1}
+\begin{solusi}
+    Definisikan $P(a,b)$ sebagai asersi ekspresi di soal. Misalkan $\mathbb{P}$ adalah himpunan seluruh bilangan prima yang bernilai lebih dari $f(1)$. Jelas bahwa $\mathbb{P}$ tak terbatas dan tak hingga. Misalkan $p \in \mathbb{P}$.
+
+    Maka, $P(p-f(1),1)$ menghasilkan 
+    \begin{align*}
+        f(p-f(1))+1 &\mid (f(1)+p-f(1))^2\\
+        f(p-f(1))+1 &\mid p^2
+    \end{align*}
+    sehingga dapat disimpulkan bahwa $f(p-f(1))+1 = p^\alpha$ dengan $\alpha \in \{1,2\}$.
+
+    Asersi $P(a, p-f(1))$ menghasilkan
+    \begin{align*}
+        f(a)+p-f(1) &\mid (f(p-f(1))+a)^2\\
+        f(a)+p-f(1) &\mid (p^\alpha-1+a)^2\\
+        x &\mid ((x-f(a)+f(1))^\alpha-1+a)^2\\
+        x &\mid ((-f(a)+f(1))^\alpha-1+a)^2
+    \end{align*}
+    dimana $x=f(a)+p-f(1)$.
+
+    \begin{remark*}
+        Untuk $x,y \in \ZZ$ dengan $x \neq 0$ dan $n \in \NN$ , berlaku $x \mid (x+y)^n \implies x \mid y^n$.
+    \end{remark*}
+    
+    Karena ada tak hingga $p \in \mathbb{P}$ yang memenuhi dan $\mathbb{P}$ tak terbatas, maka $p \mapsto x$ juga tak terbatas. Di lain sisi, $((-f(a)+f(1))^\alpha-1+a)^2$ bernilai tetap (jika ditinjau dari parameter $p$). Oleh karena itu, dari hasil nomor 10, haruslah \begin{align*}
+        ((-f(a)+f(1))^\alpha-1+a)^2&=0\\
+        (-f(a)+f(1))^\alpha &= 1-a.
+    \end{align*}
+    Karena $1-a \le 0$ untuk sembarang $a \in \NN$ maka haruslah $\alpha \neq 2 \implies \alpha = 1$ sehingga didapat $f(a) = a+f(1)-1$ untuk sembarang $a \in \NN$.   
+\end{solusi}

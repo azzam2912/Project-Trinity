@@ -1,0 +1,40 @@
+\input{Soal/12 fungsi bulat 2}
+\begin{solusi}
+    Misalkan $P(m,n) : n+f(m) \mid f(n)+nf(m)$. Perhatikan bahwa
+    \begin{align*}
+        n+f(m) \mid (f(n)+nf(m))-n(n+f(m)) \implies n+f(m) \mid f(n) - n^2.
+    \end{align*}
+    Bagi kasus berdasarkan \textit{boundedness} fungsi $f$. 
+    \begin{itemize}
+        \item \textbf{Kasus I. $f$ tak terbatas}\\
+        Berdasarkan hasil nomor 10, karena fungsi $m \mapsto n+f(m)$ tak terbatas dan $\NN$ mempunyai tak hingga anggota. Oleh karena itu haruslah $f(n) - n^2 = 0 \implies f(x) = x^2, \forall x \in \NN$. 
+        
+        \item \textbf{Kasus II. $f$ terbatas}\\
+        Karena $f$ terbatas dan domainnya, yaitu $\NN$ adalah himpunan tak hingga, maka terdapat tak hingga $t \in \NN$ sehingga $f(a) = c$ untuk suatu konstanta $c \in \NN$.
+
+        Misalkan himpunan $A \subseteq \NN$ adalah himpunan tak hingga bilangan-bilangan $a$ sehingga $f(a) = c$. Maka $P(a,a):$
+        \begin{align*}
+            a+f(a) &\mid f(a) + af(a)\\
+            a+c &\mid c+ac\\
+            a+c &\mid c+ac-c(a+c)\\
+            a+c &\mid c-c^2
+        \end{align*}
+        karena fungsi $a \mapsto a+c$ tak terbatas dan $a \in \NN$ yang merupakan himpunan tak hingga, maka berdasarkan hasil nomor 10, $c-c^2=0$. Karena $c \in \NN$ maka $c=1$. Dari sini ditemukan $\forall a \in A$ berlaku $f(a)=1$.
+
+        Sekarang, perhatikan bahwa terdapat sebuah $t \in \NN$ sehingga $\forall a \ge t$, $a \in A$ atau $f(a)=1$.
+
+        Definisikan himpunan berhingga $B = \NN - A$ dengan $|B|<K$ untuk suatu bilangan asli $K$. 
+        
+        Andaikan $|B|>0$, maka ada $b \in B$ sehngga $f(b)>1$. Oleh karena itu, untuk suatu bilangan asli $k > t$ sehingga $kf(b)>k>t \implies f(kf(b))=1$, asersi $P(kf(b), b)$ menghasilkan
+        \begin{align*}
+            kf(b)+f(b) &\mid f(kf(b))+kf(b)f(b)\\ 
+            \implies (k+1)f(b) &\mid 1+kf(b)^2\\
+            \implies (k+1)f(b) &\mid 1+kf(b)^2-(k+1)f(b)f(b)\\
+            \implies (k+1)f(b) &\mid 1-f(b)^2
+        \end{align*}
+        Karena fungsi $k \mapsto (k+1)f(b)$ adalah fungsi tak terbatas dan $1-f(b)^2$ konstan, dari hasil nomor 10 didapat $1-f(b)^2=0 \implies f(b)=1$, kontradiksi.
+
+        Dapat disimpulkan bahwa haruslah $|B|=0$. Hal ini menyebabkan $A = \NN - B = \NN$ yang berarti untuk seluruh $n \in \NN=A$ berlaku $f(n)=1$.
+    \end{itemize}
+    Dari kedua kasus tersebut dapat disimpulkan bahwa fungsi $f$ yang memenuhi adalah $f(x)=x^2$ atau $f(x)=1$ untuk semua $x \in \NN$.
+\end{solusi}

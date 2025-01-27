@@ -1,0 +1,49 @@
+\input{Soal/17 SMO 2024 Junior Round 1}
+\begin{solusi}
+\subsection*{Solution (English)}
+Note that $a+b = 8-c$. Hence
+\begin{align*}
+    ab &= -bc-ca\\
+    ab &= -c(b+a)\\
+    ab &= -c(8-c)
+\end{align*}
+Using Vieta's Theorem, consider a quadratic equation with roots $a$ and $b$:
+\begin{align*}
+    x^2 - (a+b)x + ab &= 0\\
+    x^2 - (8-c) - c(8-c) &= 0
+\end{align*}
+Since $a,b,c$ are real numbers, the discriminant of this quadratic equation must be nonnegative:
+\begin{align*}
+    (-(8-c))^2 - 4(1)(-c(8-c)) &\ge 0\\
+    (8-c)(8-c) + (8-c)(4c) &\ge 0\\
+    (8-c)(8-c+4c) &\ge 0\\
+    (c-8)(3c+8) &\le 0
+\end{align*}
+which shows that $-\frac{8}{3} \le c \le 8$.
+From here we get $3(a+b) = 3(8-c) \le 3(8-(-\frac{8}{3})) = 32$.
+$\therefore$ the maximum value of $3(a + b)$ is 32, which is achieved when $c=-\frac{8}{3}$.
+
+\subsection*{Solusi (Bahasa Indonesia)}
+Perhatikan bahwa $a+b = 8-c$ sehingga
+\begin{align*}
+    ab &= -bc-ca\\
+    ab &= -c(b+a)\\
+    ab &= -c(8-c)
+\end{align*}
+Dengan Teorema Vieta, dapat ditinjau persamaan kuadrat dengan akar-akar $a$ dan $b$:
+\begin{align*}
+    x^2 - (a+b)x + ab &= 0\\
+    x^2 - (8-c) - c(8-c) &= 0
+\end{align*}
+Karena $a,b,c$ real, maka diskriminan persamaan kuadrat tersebut nonnegatif:
+\begin{align*}
+    (-(8-c))^2 - 4(1)(-c(8-c)) &\ge 0\\
+    (8-c)(8-c) + (8-c)(4c) &\ge 0\\
+    (8-c)(8-c+4c) &\ge 0\\
+    (c-8)(3c+8) &\le 0
+\end{align*}
+yang menunjukkan $-\frac{8}{3} \le c \le 8$.
+Dari sini didapat $3(a+b) = 3(8-c) \le 3(8-(-\frac{8}{3})) = 32$.
+
+$\therefore$ Nilai maksimum dari $3(a + b)$ adalah 32 yang tercapai saat $c=-\frac{8}{3}$.
+\end{solusi}

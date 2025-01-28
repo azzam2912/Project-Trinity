@@ -10,9 +10,85 @@
     Hence there are several cases.
     \begin{enumerate}[I.]
         \item $f(2)=0 \wedge f(1)=0$\\
+        $P(x,1)$ produce
+        \begin{align*}
+            f(x+1)+f(x)f(1) &= f(x)+f(1)+f(x)\\
+            f(x+1) + 0 &= f(x) + 0 + f(x)\\
+            f(x+1) &= 2f(x)\\
+            \dots\\
+            f(x+n) &= 2^nf(x)
+        \end{align*}
+        hence we have $f(x+4) = 2^4f(x) = 16f(x)$ and $f(4)=f(2+2)=2^2f(2)=0$. Now
+        $P(x,2)$ produce
+        \begin{align*}
+            f(x+2)+f(x)f(2) &= f(x)+f(2)+f(2x)\\
+            f(x+2) + 0 &= f(x) + 0 + f(2x)\\
+            4f(x) &= f(x)+f(2x)\\
+            f(2x) &= 3f(x)
+        \end{align*}
+        hence $f(4x) = 3f(2x)=9f(x)$. Thus by those results, $P(x,4)$ will produce
+        \begin{align*}
+            f(x+4)+f(x)f(4) &= f(x)+f(4)+f(4x)\\
+            16f(x) + f(x) \cdot 0 &= f(x) + 0 + 9f(x)\\
+            7f(x) &= 0\\
+            f(x) &= 0.
+        \end{align*}
+        Therefore this case $f(x)=0$ satisfy for all real $x$.
         
         \item $f(2)=0 \wedge f(1)=3$\\
+        $P(x,1)$ produce
+        \begin{align*}
+            f(x+1)+f(x)f(1) &= f(x)+f(1)+f(x)\\
+            f(x+1)+3f(x) &= f(x)+3+f(x)\\
+            f(x+1) &= 3-f(x)\\
+        \end{align*}
+        hence 
+        \begin{align*}
+            f(x+2) = 2 - f(x+1) = 3-(3-f(x)) = f(x).
+        \end{align*}
+        Hence $P(\frac{1}{2}, 2)$ produce
+        \begin{align*}
+            f(\frac{1}{2}+2) + f(\frac{1}{2})f(2) &= f(\frac{1}{2})+f(2)+f(\frac{1}{2}\times2)\\
+            f(\frac{1}{2}) + 0 &= f(\frac{1}{2}) + 0 +f(1)\\
+            f(1) &= 0
+        \end{align*}
+        which is a contradiction. No satisfying answers for this case.
+        
         \item $f(2)=2 \wedge f(1)=1$\\
+        $P(x,1)$ produces
+        \begin{align*}
+            f(x+1)+f(x)f(1) &= f(x)+f(1)+f(x)\\
+            f(x+1)+f(x) &= f(x)+1+f(x)\\
+            f(x+1) &= f(x) + 1
+        \end{align*}
+        and it is easy to show that $f(x+n)=f(x)+n$ and $f(n)=f(1+n-1)=f(1)+n-1=n$ for any positive integers $n$.
+
+        Now $P(x,n)$ for arbitrary positive integer $n$ will gives
+        \begin{align*}
+            f(x+n)+f(x)f(n) &= f(x)+f(n)+f(xn)\\
+            f(x+n)+nf(x) &= f(x)+n+f(nx)\\
+            f(x)+n+nf(x) &= f(x)+n+f(nx)\\
+            f(nx) &= nf(x)
+        \end{align*}
+
+        Next, $P(2x,2y)$ produces
+        \begin{align*}
+            f(2x+2y)+f(2x)f(2y) &= f(2x)+f(2y)+f(2x2y)\\
+            2f(x+y)+2f(x)2f(y) &= 2f(x)+2f(y)+4f(xy)\\
+            f(x+y)+2f(x)f(y) &= f(x)+f(y)+2f(xy)
+        \end{align*}
+
+        subtract the last equation with the equation in the problem statement, we get for any real numbers $x,y$ that $f(x)f(y)=f(xy)$ hence $f(x+y)=f(x)+f(y)$. Those equations are indeed Cauchy's Functional Equation where $f(x)=x$. This case finished.
+
+
         \item $f(2)=2 \wedge f(1)=2$\\
+        $P(x-1,1)$ gives
+        \begin{align*}
+            f((x-1)+1) + f(x-1)f(1) &= f(x-1)+f(1)+f((x-1)1)\\
+            f(x) + 2f(x-1) &= f(x-1)+2+f(x-1)\\
+            f(x) &= 2.
+        \end{align*}
+        Thus $f(x)=2$ for all real number $x$.
     \end{enumerate}
+    By considering all cases, we get the satisfying functions for all real number $x$ : $f(x)=0$, $f(x)=2$, or $f(x)=x$.
 \end{solusi}

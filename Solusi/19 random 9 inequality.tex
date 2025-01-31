@@ -1,4 +1,21 @@
 \input{Soal/19 random 9 inequality}
 \begin{solusi}
-    
+    % https://math.stackexchange.com/questions/1028027/proving-the-inequality-4-ge-a2bb2cc2aabc
+    Misalkan $(x,y,z)$ adalah permutasi dari $(a,b,c)$ dengan $x \ge y \ge z$. Karena $xy \ge zx \ge yz$, dengan Rearrangement Inequality / Renata kita punya
+    \begin{align*}
+        xy \cdot x + zx \cdot y + yz \cdot z \ge ab\cdot a + bc \cdot b + ca \cdot c = a^2 b + b^2 c + c^2 a.
+    \end{align*}
+    Lalu dengan AM-GM kita punya
+    \begin{align*}
+        xy \cdot x + zx \cdot y + yz \cdot z + xyz &= y(x+z)^2\\
+        &= \dfrac{1}{2}(2y)(x+z)(x+z)\\
+        &\le \dfrac{1}{2}\left(\dfrac{(2y)+(x+z)+(x+z)}{3}\right)^3\\
+        &= \dfrac{1}{2}\left(\dfrac{6}{3}\right)\\
+        &= 4.
+    \end{align*}
+    Oleh karena itu kita punya
+    \begin{align*}
+        4 \ge xy \cdot x + zx \cdot y + yz \cdot z + xyz \ge a^2 b + b^2 c + c^2 a + abc
+    \end{align*}
+    dengan kesamaan saat $a=b=c=1$.
 \end{solusi}

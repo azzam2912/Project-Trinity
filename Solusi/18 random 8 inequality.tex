@@ -1,4 +1,27 @@
 \input{Soal/18 random 8 inequality}
 \begin{solusi}
-    
+    Since the expression is symmetric, then we can assume WLOG $a \ge b \ge c$. Hence
+    \begin{align*}
+        a^2 \ge b^2 \ge c^2  \text{ and }
+        \dfrac{1}{a^2+b^2+2c^2} \ge \dfrac{1}{a^2+2b^2+c^2} \ge \dfrac{1}{2a^2+b^2+c^2}.
+    \end{align*}
+    Hence by Rearrangement Inequality
+    \begin{align*}
+        \cycsum \dfrac{a^2}{a^2+b^2+2c^2} \ge  \cycsum \dfrac{c^2}{a^2+b^2+2c^2} \text{ and }
+        \cycsum \dfrac{b^2}{a^2+b^2+2c^2} \ge  \cycsum \dfrac{c^2}{a^2+b^2+2c^2}
+    \end{align*}
+    thus adding those expressions
+    \begin{align*}
+        \cycsum \dfrac{a^2+b^2}{a^2+b^2+2c^2} &\ge \cycsum \dfrac{2c^2}{a^2+b^2+2c^2} & (Rearrangement)
+    \end{align*}   
+    hence we have
+    \begin{align*}
+        \cycsum\left( \dfrac{(a+b)^2}{c^2+ab} - 2\right)
+        &= \cycsum \dfrac{a^2+2ab+b^2-2c^2-2ab}{c^2+ab}\\
+        &\ge \cycsum \dfrac{a^2+b^2-2c^2}{c^2+\frac{1}{2}(a^2+b^2)} & (AM-GM)\\
+        &= 2\cycsum \left(\dfrac{a^2+b^2}{a^2+b^2+2c^2} - \dfrac{2c^2}{a^2+b^2+2c^2}\right)\\
+        &\ge 0 & (Rearrangement) \\
+        \implies \cycsum\dfrac{(a+b)^2}{c^2+ab} &\ge \cycsum 2 = 6
+    \end{align*}
+    where the equality happens when $a=b=c$. QED.
 \end{solusi}

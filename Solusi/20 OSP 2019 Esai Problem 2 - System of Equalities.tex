@@ -1,0 +1,43 @@
+\input{Soal/20 OSP 2019 Esai Problem 2 - System of Equalities}
+
+\begin{solusi}[1]
+    Jelas bahwa $k$ harus positif karena $ka^2 = c^2+ac > 0$. Jumlahkan semua persamaan akan didapat
+    \begin{align*}
+        \cycsum a^2 + \cycsum ab = k\cycsum a^2
+    \end{align*}
+    Padahal dengan ketaksamaan AM-GM kita punya
+    \begin{align*}
+        2\cycsum a^2 &= \cycsum a^2 + \cycsum \dfrac{a^2+b^2}{2}\\ 
+        &\ge \cycsum a^2 + \cycsum ab\\
+        &= k\cycsum a^2\\
+        \implies 2 &\ge k.
+    \end{align*}
+    Di lain pihak, kalikan semua persamaan dan padukan dengan ketaksamaan AM-GM kita punya 
+    \begin{align*}
+        k^3(abc)^2 &= \cycprod kb^2\\
+        &= \cycprod (a^2+ab)\\
+        &= \cycprod a(a+b)\\
+        &= abc\cycprod(a+b)\\
+        &\ge abc\cycprod 2\sqrt{ab}\\
+        &= abc \cdot 8 \cdot \sqrt{a^2b^2c^2}\\
+        \implies k^3 &\ge 8\\ 
+        \implies k &\ge 2.
+    \end{align*}
+    Karena $2 \ge k \ge 2 \implies k=2$. Cek bahwa $k=2$ mempunyai solusi $(a,b,c)=(1,1,1)$. Terbukti $k=2$ memenuhi.
+\end{solusi} 
+
+\begin{solusi}[2]
+    Jelas bahwa $k$ harus positif karena $ka^2 = c^2+ac > 0$. Perhatikan bahwa sistem persamaan tersebut siklis. Oleh karena itu WLOG dapat diasumsikan $a = \max\{a,b,c\}$. Berarti
+    \begin{align*}
+        kb^2 = a^2+ab \ge b^2+cb = kc^2 \implies b \ge c.
+    \end{align*}
+    Berarti sekarang kita punya $a \ge b \ge c$. Dari fakta tersebut akan didapat
+    \begin{align*}
+        c^2+ca = ka^2  \ge kb^2 = a^2+ab \ge c^2+ac,
+    \end{align*}
+    yang menunjukkan terjadi kesamaan sehingga haruslah $ka^2=kb^2 \implies a=b$. Berarti
+    \begin{align*}
+        a^2+a\cdot a = ka^2 \implies k=2.
+    \end{align*}
+    Cek bahwa $k=2$ mempunyai solusi $(a,b,c)=(1,1,1)$. Terbukti $k=2$ memenuhi.
+\end{solusi}

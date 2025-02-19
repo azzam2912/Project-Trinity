@@ -33,3 +33,15 @@
 
     Dari induksi matematika, terbukti bahwa $f(n)=n$ untuk semua bilangan asli $n$.
 \end{solusi}
+
+\begin{solusi}[2] (Credit to Farabi Azzam)
+    Akan dibuktikan dengan induksi kuat bahwa $f(n)=n$ untuk semua bilangan asli $n$. Dari solusi sebelumnya didapat $f(1)=1$, $f(2)=2$, $f(3)=3$, base case terbukti. Asumsikan untuk semua $k=1,2,\dots,m$ dengan $m \ge 3$ berlaku $f(k)=k$. Berdasarkan Bertrand's Postulate, untuk $k>1$ terdapat bilangan prima $p$ sehingga $k+2<p<2(k+2)$. Oleh karena itu
+    \begin{align*}
+        f(k+1)+f(p-k-1) \mid (k+1)+(p-k-1)
+    \end{align*}
+    karena $1\le p-k-1<k+1$ maka berdasarkan asumsi induksi kuat, $f(p-k-1)=p-k-1$ sehingga didapat
+    \begin{align*}
+        f(k+1)+p-k-1 \mid p.
+    \end{align*}
+    Karena $f(k+1)+p-k-1>1$ dan $p$ prima, haruslah $f(k+1)+p-k-1=p$ yang menyebabkan $f(k+1)=k+1$. Dapat disimpulkan dengan induksi kuat bahwa $f(n)=n$ untuk semua $n \in \NN$. \qed
+\end{solusi}

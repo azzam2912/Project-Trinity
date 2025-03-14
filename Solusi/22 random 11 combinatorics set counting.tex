@@ -1,0 +1,31 @@
+\input{Soal/22 random 11 combinatorics set counting}
+
+\begin{solusi}
+    Akan dihitung banyaknya tripel himpunan $(A,B,C)$ dengan mengobservasi setiap $x \in \{1,2,3,4\}$ pada keanggotaannya sebagai elemen $A,B,C$. 
+    
+    Akan diobservasi $(A,B,C)$ yang memenuhi $A \subseteq B$ dan $C$ (tanpa batasan lain). Perhatikan bahwa terdapat tiga kondisi untuk masing-masing $x$:
+    \begin{itemize}
+        \item $x \not \in B$ (sehingga $x \not \in A$ juga),
+        \item $x \in B$ tetapi $x \not \in A$, dan
+        \item $x \in A$ (sehingga $x \in B$ juga).
+    \end{itemize}
+    Karena ada empat kemungkinan $x$, maka banyaknya kemungkinan untuk kasus ini adalah $3^4$. Selanjutnya, terkait keanggotaannya terhadap $C$, ada dua kasus:
+    \begin{itemize}
+        \item $x \in C$, dan
+        \item $x \not \in C$.
+    \end{itemize}
+    Sehingga didapat ada $2^4$ total kemungkinan  untuk keempat $x$ yang mungkin. 
+    Oleh karena itu, dengan aturan perkalian didapatkan seluruh kemungkinan keanggotaan $x$ terhadap $A \subseteq B$ dan $C$ adalah $3^4 \times 2^4 = 1296$.
+
+    Selanjutnya akan diobservasi banyaknya $(A,B,C)$ yang memenuhi $A \subseteq B$ dan $A \cap C = \emptyset$. Perhatikan bahwa terdapat lima kondisi untuk masing-masing $x$:
+    \begin{itemize}
+        \item $x \not \in A \cup B \cup C$;
+        \item $x \not \in C$, $x \in B$, dan $x \not \in A$;
+        \item $x \not \in C$, $x \in A$ (sehingga $x \in B$ juga);
+        \item $x \in C$, $x \not \in B$ (sehingga $x \not \in A$ juga);
+        \item $x \in C$, $x \in B$, dan $x \not \in A$.
+    \end{itemize}
+    Oleh karena itu terdapat $5^4 = 625$ total kemungkinan untuk kasus ini.
+
+    Dari prinsip inklusi eksklusi, banyaknya tripel $(A,B,C)$ sehingga $A \subseteq B$ dan $A \cap C = \emptyset$ adalah $1296 - 625 = \boxed{671}$.
+\end{solusi}

@@ -1,0 +1,10 @@
+main-*.asy
+*.out
+*.aux
+*.fdb_latexmk
+*.log
+*.pre
+*.fls
+*.toc
+*.eps
+.DS_Store

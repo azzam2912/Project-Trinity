@@ -16,10 +16,10 @@
         \begin{itemize}
         \item Jika $a=b=3$, maka $2^3+2^c+3(3+1)=2^c+20>16$ merupakan bilangan 2 pangkat. Perhatikan $c>3$ menyebabkan $2^c+20 \equiv 4 \mod 16$. Padahal karena bilangan tersebut adalah 2 pangkat yang lebih dari 16 haruslah l, bilangan tersebut haruslah bernilai 0 modulo 16. Kontradiksi.
 
-        \item Jika $a=b > 3$ atau $b > a \ge 3$ maka $c \ge 7$ (ingat mereka harus ganjil). Maka
+        \item Jika $a=b > 3$ atau $b > a \ge 3$ maka $c \ge 7$ dan $a \le c-2 \implies a+1 \le c-1$ (ingat mereka harus ganjil). Maka
         \begin{align*}
             2^{c} &< 2^b + 2^c + 3(a+1)
-            < 2^b + 2^c + 2^{a-1} \le 2^{c-1} + 2^c + 2^{c-1} = 2^c + 2^{c} = 2^{c+1}
+            < 2^b + 2^c + 2^{a+1} \le 2^{c-1} + 2^c + 2^{c-1} = 2^c + 2^{c} = 2^{c+1}
         \end{align*}
         yang menunjukkan $2^b + 2^c + 3(a+1)$ bukan berbentuk 2 pangkat.
         \end{itemize}

@@ -1,0 +1,54 @@
+\input{Soal/23 Canadian MO 2013 Polynomial}
+
+\begin{solusi}
+    Misalkan $T(x) = (x+1)P(x-1) - (x-1)P(x)$. Dari soal diketahui bahwa $T(x)=c$ untuk suatu konstanta real $c$.
+
+    \subsubsection*{Kasus 1: $P(x)$ adalah polinomial konstan}
+    Jika $P(x) = k$ untuk suatu konstanta $k$, maka:
+    \[ T(x) = (x+1)k - (x-1)k = kx + k - kx + k = 2k \]
+    Karena $2k$ adalah sebuah konstanta, maka semua polinomial konstan $P(x)=k$ memenuhi syarat.
+    
+    \subsubsection*{Kasus 2: $P(x)$ bukan polinomial konstan}
+    Karena $T(x)=c$ adalah konstan, nilainya sama untuk semua $x$. Substitusi beberapa nilai $x$ berikut:
+    \begin{itemize}
+        \item Untuk $x=1$: \quad $T(1) = (1+1)P(1-1) - (1-1)P(1) = 2P(0)$.
+        \item Untuk $x=-1$: \quad $T(-1) = (-1+1)P(-1-1) - (-1-1)P(-1) = 2P(-1)$.
+    \end{itemize}
+    Karena $T(1) = T(-1) = c$, maka kita dapatkan $2P(0) = 2P(-1)$, yang berarti $P(0) = P(-1) = k$ untuk suatu konstanta $k$.
+    
+    Sekarang, konstruksi polinomial baru, $Q(x) = P(x) - k$.
+    Perhatikan bahwa $Q(0) = P(0) - k = 0$ dan $Q(-1) = P(-1) - k = 0$.
+    Karena $Q(x)$ memiliki akar di $x=0$ dan $x=-1$, maka $Q(x)$ dapat ditulis dalam bentuk:
+    \[ Q(x) = A(x) \cdot x(x+1) \]
+    untuk suatu polinomial $A(x)$. Dengan demikian, kita dapat menyatakan $P(x)$ sebagai:
+    \[ P(x) = Q(x) + k = A(x)x(x+1) + k \]
+    Substitusikan kembali bentuk $P(x)$ ini ke dalam persamaan awal untuk $T(x)$:
+    \begin{align*}
+        c &= (x+1)P(x-1) - (x-1)P(x) \\
+        c &= (x+1)\left[ A(x-1)(x-1)x + k \right] - (x-1)\left[ A(x)x(x+1) + k \right] \\
+        c &= x(x-1)(x+1)A(x-1) + k(x+1) - x(x-1)(x+1)A(x) - k(x-1) \\
+        c &= x(x^2-1) \left[ A(x-1) - A(x) \right] + kx + k - kx + k \\
+        c &= (x^3-x) \left[ A(x-1) - A(x) \right] + 2k
+    \end{align*}
+    Agar $T(x)=c$ bisa menjadi konstan, maka suku yang mengandung $x$ haruslah nol atau konstan yang sesuai.
+    \[ (x^3-x) \left[ A(x-1) - A(x) \right] = c - 2k \]
+    dengan sisi kanan, $c-2k$, adalah sebuah konstanta. Misalkan $d$ adalah derajat dari $A(x)$.
+    
+    \begin{lemma*}[Well Known Lemma]
+    Untuk sebarang polinomial $P(x)$ berderajat $k \ge 1$ dan konstanta $a$, polinomial $P(x+a)-P(x)$ adalah polinomial berderajat $k-1$.
+    \end{lemma*}
+    
+    Jika $d \ge 1$, maka berdasarkan lemma well known tersebut tentant selisih polinomial, derajat dari $A(x-1)-A(x)$ adalah $d-1$. Dengan demikian, derajat dari sisi kiri adalah $3 + (d-1) = d+2$. Karena $d \ge 1$, maka $d+2 \ge 3$. Ini berarti sisi kiri adalah polinomial non-konstan, yang menghasilkan kontradiksi.
+     
+    Oleh karena itu, satu-satunya kemungkinan adalah $d < 1$, yang berarti $d=0$ berarti $A(x)=b$ untuk suatu konstanta real $b$.
+    
+    Dengan demikian, bentuk $P(x)$ adalah:
+    \[ P(x) = b \cdot x(x+1) + k = bx^2 + bx + k \]
+    
+    Cek ke soal, polinomial tersebut memenuhi.
+    
+    Dapat disimpulkan bahwa seluruh polinomial
+    \[ P(x) = bx^2 + bx + k \]
+    memenuhi dimana $b$ dan $k$ adalah konstanta real sembarang. (Saat $b=0$, $P(x)$ adalah polinomial konstan).
+
+\end{solusi}

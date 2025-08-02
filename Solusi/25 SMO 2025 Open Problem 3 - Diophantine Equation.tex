@@ -1,0 +1,28 @@
+\input{Soal/25 SMO 2025 Open Problem 3 - Diophantine Equation}
+
+\begin{solusi}
+    Akan dicari $a$ dan $b$ yang memenuhi
+    \begin{align*}
+        (a+b)^2&=100a+b\\
+        (a+b)^2 - (a+b) &= 99a\\
+        (a+b)(a+b-1) &= 99a
+    \end{align*}
+    Misalkan $a = dx$ dan $b = dy$ dengan $d,x,y \in \ZZ^+$  yang memenuhi $FPB(x,y) = 1$. Maka
+    \begin{align*}
+        (dx+dy)(dx+dy-1) &= 99dx\\
+        (x+y)((x+y)d-1) &= 99x.
+    \end{align*}
+    Selanjutnya, karena $FPB(x,x+y)=1$ maka $x+y \nmid x$ sehingga $x+y \mid 99$. Kita juga punya $x+y \ge 1+1 = 2$. Berarti akan dibagi kasus untuk $x+y=3,9,11,33,99$.
+    \begin{enumerate}[(I)]
+        \item Jika $x+y = 3$ maka $3(3d-1) = 99x \implies 3d-1 = 33x$, kontradiksi karena sisi kiri tidak terbagi 3 sedangkan sisi kanan terbagi 3.
+
+        \item Jika $x+y= 9$ maka $9(9d-1) = 99x \implies 9d = 11x+1$ sehingga $11x+1 \equiv 0 \mod 9 \implies 2x \equiv 8 \mod 9 \implies x \equiv 4 \mod 9$. Lalu, karena $FPB(x,y) = 1$, maka kandidat $(x,y)$ yang mungkin adalah $(4,5)$ dengan. Cek ke persamaan, solusi ini memenuhi dengan $d = 5$ dan $(a,b)=(20,25)$.
+
+        \item Jika $x+y= 11$ maka $11(11d-1) = 99x \implies 11d = 9x+1$ sehingga $9x+1 \equiv 0 \mod 11 \implies -2x \equiv 10 \mod 11 \implies x \equiv -5 \equiv 6 \mod 11$. Lalu, karena $FPB(x,y) = 1$, maka kandidat $(x,y)$ yang mungkin adalah $(6,5)$ dengan. Cek ke persamaan, solusi ini memenuhi dengan $d = 5$ dan $(a,b)=(30,25)$.
+
+        \item Jika $x+y = 33$ maka $33(33d-1) = 99x \implies 33d-1 = 3x$, kontradiksi karena sisi kiri tidak terbagi 3 sedangkan sisi kanan terbagi 3.
+
+        \item Jika $x+y= 99$ maka $99(99d-1) = 99x \implies 99d-1 = x$. Karena $99d = x+1 \le x+y = 99$ maka $d \le 1 \implies d=1$. Dari sini didapat $x=98$ dan $y=1$. Cek ke persamaan, $(a,b)=(x,y)=(98,1)$ memenuhi.
+    \end{enumerate}
+    Dapat disimpulkan bahwa pasangan solusi $(a,b)$ yang memenuhi adalah $(20,25),(30,25),(98,1)$.
+\end{solusi}

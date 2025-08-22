@@ -1,0 +1,36 @@
+\input{Soal/27 OSP 2025 Isian Singkat Problem 4}
+\begin{solusi}
+    \begin{remark*}[Motivasi]
+        Pas lihat pertama kali ada banyak 2 pangkat dan ada 4 pangkat yang sebenarnya juga 2 pangkat \textit{in disguise} (inget aja kalo $4 = 2^2$). Nah kalo udah ada kumpulan bilangan $n$ pangkat terus dijumlahin $\implies$ bilangan itu bisa diubah ke basis-$n$. Dari sini tinggal operasikan bilangan biner deh, gampang =D
+    \end{remark*}
+    Perhatikan bahwa untuk sembarang bilangan bulat non-negatif $n$, representasi biner (basis 2) dari $2^n$ adalah $1\underbrace{000...00_2}_{n \text{ buah } 0}$. Lalu, diketahui juga lemma yang sangat kecil berikut 
+    \begin{lemma*}
+        Misal $x,y$ adalah dua bilangan bulat non-negatif.
+        
+        Jika $x=y=n$ maka
+        $$2^n + 2^n = 2 \cdot 2^n = 2^{n+1} \text{ yang berarti } 1\underbrace{000...000_2}_{n \text{ buah } 0} + 1\underbrace{000...000_2}_{n \text{ buah } 0} = 1\underbrace{000...000_2}_{n+1 \text{ buah } 0}.$$
+        
+        Jika $x \neq y$, WLOG $x > y$ maka 
+        $$1\underbrace{000...0000_2}_{x \text{ buah } 0} + 1\underbrace{000...0000_2}_{y \text{ buah } 0} = 1\underbrace{00000...0000}_{x-y-1 \text{ buah } 0}1\underbrace{00000...00_2}_{y \text{ buah } 0} \neq 1\underbrace{000...00_2}_{t \text{ buah } 0}$$
+        untuk suatu bilangan bulat non-negatif $t$.
+    \end{lemma*}
+    Oleh karena itu, persamaan di soal menjadi
+    \begin{align*}
+    2^a+2^b+2^c &= 2^{2d}\\
+    1\underbrace{000...00_2}_{a \text{ buah } 0} + 1\underbrace{000...00_2}_{b \text{ buah } 0} + 1\underbrace{000...00_2}_{c \text{ buah } 0} &= 1\underbrace{000...00_2}_{2d \text{ buah } 0}
+    \end{align*}
+    Karena $(a,b,c)$ simetris (ditukar-tukar tetap solusi), maka WLOG $a \ge b \ge c$. Dari lemma di atas, haruslah $b=c$ sehingga
+    \begin{align*}
+    1\underbrace{000...00_2}_{a \text{ buah } 0} + 1\underbrace{000...00_2}_{b+1 \text{ buah } 0} &= 1\underbrace{000...00_2}_{2d \text{ buah } 0}
+    \end{align*}
+    yang mengharuskan $a=b+1$ sehingga
+    \begin{align*}
+    1\underbrace{000...00_2}_{a+1 \text{ buah } 0} &= 1\underbrace{000...00_2}_{2d \text{ buah } 0}.
+    \end{align*}
+    Didapat $a=b+1=c+1$ dan $a+1=2d$.
+    Berarti solusi yang mungkin adalah $(a,b,c,d)=(2d-1, 2d-2, 2d-2, d)$. Dari sini, solusi terbesar $d$ bisa didapat dengan
+    \begin{align*}
+        a+b+c+d \le 500 \implies (2d-1)+(2d-2)+ (2d-2) + d \le 500 \implies 7d - 5 \le 500 \implies d \le 72.
+    \end{align*}
+    Nilai terbesar yang mungkin dari $d$ adalah \boxed{72} yang dicapai saat $(a,b,c,d)=(143,142,142,72)$.
+\end{solusi}

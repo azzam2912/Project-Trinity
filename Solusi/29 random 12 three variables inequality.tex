@@ -1,0 +1,13 @@
+\input{Soal/29 random 12 three variables inequality.tex}
+\begin{solusi}
+Perhatikan bahwa
+\begin{align*}
+    \dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{a} - (a+b+c) &= \cycsum \left(\dfrac{a^2}{b}-2a+b\right) \\
+    &= \cycsum \left(\dfrac{a^2-2ab+b^2}{b}\right) \\
+    &= \cycsum \left(\dfrac{(a-b)^2}{b}\right) \\
+    &= \dfrac{(a-b)^2}{b} + \dfrac{(b-c)^2}{c} + \dfrac{(a-c)^2}{a}\\
+    &\geq \dfrac{(a-b)+(b-c)+(a-c)}{b+c+a} \qquad \text{by Cauchy-Schwarz-Engel inequality}\\
+    &= \dfrac{4(a-b)^2}{a+b+c}.
+\end{align*}
+dengan kesamaan saat $a=b=c$. Terbukti.
+\end{solusi}

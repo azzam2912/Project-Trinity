@@ -1,0 +1,47 @@
+\input{Soal/28 EMC Junior 2024 Problem 1}
+\begin{solusi}
+    \begin{remark*}[Motivasi]
+        Udah, ini soal emang ajaib dan idenya didapat dari observasi banyak \textit{pattern}. Dan \textit{step} krusial lainnya adalah melihat keadaan akhir atau \textit{goal} dari bilangan ini adalah apa.
+    \end{remark*}
+    Misalkan bilangan di keadaan saat ini adalah $a=10x+d$ dengan $x$ adalah bilangan asli dan $d$ adalah bilangan bulat nonnegatif satu digit. Setelah melakukan satu \textit{step}, bilangan itu akan menjadi $b=x+2d$.
+
+    \begin{lemma*}
+        Bilangan pada \textit{step} terakhir adalah 19.
+        \begin{proof}
+            Bilangan terakhir tercapai saat $a=b$ atau
+            \begin{align*}
+                10x+d &= x+2d\\
+                9x &= d
+            \end{align*}
+            Karena $d$ adalah bilangan bulat satu digit dan $x$ adalah bilangan asli, maka haruslah $x=1$ dan $d=9$. Berarti bilangan terakhir ini adalah $19$.
+            
+            Perhatikan jika kita sudah mendapatkan bilangan 19, maka bilangan pada \textit{step} selanjutnya adalah $1+2\times 9 = 19$, bilangan yang sama. Terbukti.
+        \end{proof}
+    \end{lemma*}
+
+    Sekarang observasi modulo 19 pada bilangan tersebut.
+    \begin{align*}
+        2(10x+d) \equiv 19x + (x+2d) \equiv x+2d \mod 19.
+    \end{align*}
+    Perhatikan karena bilangan terakhir adalah 19 yang habis dibagi 19. Maka dari hubungan modulo di atas, semua bilangan sebelumnya juga habis dibagi 19 yang mudah dibuktikan dengan induksi.
+
+    Selanjutnya mudah dilihat bahwa bilangan-bilangan itu akan membentuk barisan monoton turun karena untuk $x>1$ berlaku
+    $$9x > 9 \ge \implies 10x-x > 2d - d \implies 10x+d > x+2d$$
+
+    Oleh karena itu bilangan 2024 digit terkecil yang memenuhi adalah kelipatan 19 terkecil yang mempunyai 2024 digit. Perhatikan bahwa
+
+    \begin{align*}
+        10^4 &\equiv (10^2)^2 \equiv 100^2 \equiv 5^2 \equiv 25 \equiv 6 \mod 19\\
+        \implies 10^3 &\equiv 1000 \equiv 12 \mod 19\\
+        \implies 10^7 &\equiv 10^4\cdot 10^3 \equiv 6 \cdot 12 \equiv 72 \equiv 15 \mod 19.
+    \end{align*}
+    Lalu, berdasarkan Fermat's Little Theorem
+    \begin{align*}
+        10^{18} \equiv 10^{19-1} \equiv 1 \mod 19
+    \end{align*}
+    Sehingga
+    \begin{align*}
+        10^{2023} = (10^{18})^{112}10^7 \equiv 1^{112} \cdot 15 \equiv -4 \mod 19.
+    \end{align*}
+    Berarti bilangan 2024 digit terkecil yang habis terbagi 19 adalah $10^{2023} + 4$ yang merupakan jawaban yang kita cari.
+\end{solusi}

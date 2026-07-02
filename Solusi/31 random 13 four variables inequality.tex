@@ -4,7 +4,6 @@ Karena $abcd=1$, terdapat $x,y,z,w \in \mathbb{R}^+$ sedemikian sehingga
 \begin{align*}
     a = \dfrac{x}{w}, \quad b = \dfrac{y}{x}, \quad c = \dfrac{z}{y}, \quad d = \dfrac{w}{z}
 \end{align*}
-(misalnya ambil $x=1$, $y=b$, $z=bc$, $w=\frac{1}{a}$; dapat dicek $abcd=1$ menjamin $d=w/z$).
 
 Dengan substitusi ini,
 \begin{align*}
@@ -15,7 +14,7 @@ dan serupa untuk suku-suku lainnya, sehingga
     \dfrac{ab+1}{a+1} + \dfrac{bc+1}{b+1} + \dfrac{cd+1}{c+1} + \dfrac{da+1}{d+1} = \dfrac{y+w}{x+w} + \dfrac{z+x}{y+x} + \dfrac{w+y}{z+y} + \dfrac{x+z}{w+z}.
 \end{align*}
 
-Dengan Cauchy-Schwarz (bentuk Engel/Titu),
+Dengan CS-Engel,
 \begin{align*}
     \dfrac{y+w}{x+w} + \dfrac{z+x}{y+x} + \dfrac{w+y}{z+y} + \dfrac{x+z}{w+z}
     &= \dfrac{(y+w)^2}{(y+w)(x+w)} + \dfrac{(z+x)^2}{(z+x)(y+x)} + \dfrac{(w+y)^2}{(w+y)(z+y)} + \dfrac{(x+z)^2}{(x+z)(w+z)}\\
@@ -23,12 +22,12 @@ Dengan Cauchy-Schwarz (bentuk Engel/Titu),
     &= \dfrac{(2w+2x+2y+2z)^2}{(y+w)(x+w)+(z+x)(y+x)+(w+y)(z+y)+(x+z)(w+z)}.
 \end{align*}
 
-Jabarkan penyebutnya: setiap kuadrat $w^2,x^2,y^2,z^2$ muncul tepat satu kali (berturut-turut dari suku pertama, kedua, ketiga, keempat), dan setiap hasil kali dua variabel berbeda muncul tepat dua kali. Oleh karena itu
+Dikarenakan
 \begin{align*}
-    (y+w)(x+w)+(z+x)(y+x)+(w+y)(z+y)+(x+z)(w+z) = (w+x+y+z)^2.
+    (y+w)(x+w)+(z+x)(y+x)+(w+y)(z+y)+(x+z)(w+z) = (w+x+y+z)^2,
 \end{align*}
 
-Akibatnya
+akibatnya
 \begin{align*}
     \dfrac{ab+1}{a+1} + \dfrac{bc+1}{b+1} + \dfrac{cd+1}{c+1} + \dfrac{da+1}{d+1} \geq \dfrac{4(w+x+y+z)^2}{(w+x+y+z)^2} = 4,
 \end{align*}

@@ -1,0 +1,36 @@
+\section{Motivasi}
+Oke, ada $a^2+1$ terus kita mungkin tahu kalau $\tan^2 x + 1 = \sec ^2 x$. Terus di soalnya, $a,b,c$ bilangan real!! yaudah gasekun aja coba euy.
+
+\section{Solusi}
+Dikarenakan $a,b,c$ semuanya bilangan real dan fungsi $\tan$ hasilnya bisa mencakup semua bilangan real, maka masuk akal jika kita lakukan substitusi berikut.
+\begin{align*}
+a &= \tan x \\
+b &= \tan y \\
+c &= \tan z
+\end{align*}
+Berarti kita tinggal membuktikan ketaksamaan berikut
+\begin{align*}
+(ab+bc+ca-1)^2 &\leq (a^2+1)(b^2+1)(c^2+1)\\
+(\tan x \tan y + \tan y \tan z + \tan z \tan x - 1)^2 &\leq (\tan^2 x + 1)(\tan^2 y + 1)(\tan^2 z + 1)\\
+(\tan x \tan y + \tan y \tan z + \tan z \tan x - 1)^2 &\leq (\sec^2 x)(\sec^2 y)(\sec^2 z) \\
+(\tan x \tan y + \tan y \tan z + \tan z \tan x - 1)^2& (\cos^2 x)(\cos^2 y)(\cos^2 z) \leq 1
+\end{align*}
+Di lain sisi kita punya
+\begin{align*}
+&(\tan x \tan y + \tan y \tan z)(\cos x \cos y \cos z) \\
+&= \sin x \sin y \cos z + \sin y \sin z \cos x \\
+&= \sin y (\sin(x+z))
+\end{align*}
+dan juga kita punya
+\begin{align*}
+&(\tan z \tan x - 1)(\cos x \cos y \cos z) \\
+&= \sin x \sin z \cos y - \cos y \cos x \cos z \\
+&= \cos y (-\cos(x+z))
+\end{align*}
+oleh karena itu ketaksamaan yang ingin dibuktikan setara dengan
+\begin{align*}
+&\left[ \sin y \sin(x+z) - \cos y \cos(x+z) \right]^2\\
+&= \left[ -\cos(y+x+z) \right]^2 \\
+&\leq 1
+\end{align*}
+yang jelas benar. Kesamaan dapat terjadi saat $a=b=c=0$.

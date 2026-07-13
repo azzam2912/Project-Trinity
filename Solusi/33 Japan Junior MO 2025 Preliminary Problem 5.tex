@@ -1,0 +1,57 @@
+\input{Soal/33 Japan Junior MO 2025 Preliminary Problem 5}
+\begin{solusi}
+\section{Motivasi dan Walkthrough}
+
+\begin{itemize}
+    \item Operasi ini sebenarnya punya nama: \textcrimson{\textbf{Bulgarian Solitaire}}. Teknik ini pertama kali dibahas di 1983 Scientific American column oleh Martin Gardner.
+    \item Coba main-main dulu sama angka kecil, misal mulai dari $6$ batu. Tulis banyaknya batu tiap kotak, urut dari yang terbanyak, terus jalanin operasinya beberapa langkah. Nyadar sesuatu?
+    \item Kunci utamanya: kotak awal yang isinya $N=50^{25}$ batu itu \emph{selalu} kehilangan tepat $1$ batu tiap langkah. Jadi kapan dia habis? Dan pas dia habis, lagi ada berapa kotak?
+    \item Terakhir, banyaknya kotak yang lagi "hidup" (yang berisi batu) ternyata nyambung sama bilangan segitiga $T_k = \tfrac{k(k+1)}{2}$. Tinggal cari $k$ yang pas.
+\end{itemize}
+
+
+Ayo coba kita jalankan operasinya untuk $N=6$ batu sebagai gambaran (angka menyatakan isi tiap kotak, diurutkan dari yang terbanyak):
+\begin{align*}
+    (6) \to (5,1) \to (4,2) \to (3,3) \to (3,2,1) \to (3,2,1) \to \cdots
+\end{align*}
+Perhatikan bahwa kotak awal berisi $6$ batu berkurang $1$ tiap langkah, dan tepat setelah $6$ langkah kotak itu habis. Saat itu banyaknya kotak yang hidup adalah $3$, dan kebetulan $T_3 = \tfrac{3\cdot 4}{2} = 6 = N$.
+
+\newpage
+\section{Solusi}
+Misalkan $N = 50^{25}$. Pandang \emph{kotak awal} yang mula-mula berisi $N$ batu. Pada setiap operasi, setiap kotak yang tidak kosong kehilangan tepat $1$ batu. Dengan demikian, selama masih ada isinya, kotak awal kehilangan tepat $1$ batu per langkah, sehingga kotak awal menjadi kosong \emph{tepat} setelah operasi ke-$N$. Karena kita memang berhenti setelah operasi ke-$N = 50^{25}$, kita cukup menghitung banyaknya kotak yang hidup (kotak yang berisi batu) tepat pada saat itu.
+
+\medskip
+\textbf{Klaim.} Setelah operasi ke-$N$, banyaknya kotak yang hidup adalah bilangan bulat $k$ terbesar yang memenuhi $T_k = \dfrac{k(k+1)}{2} \le N$.
+
+\medskip
+Untuk memahami klaim ini, perhatikan bahwa setiap langkah menghapus $1$ batu dari tiap kotak lalu menambahkan satu kotak baru yang isinya sama dengan \emph{banyaknya} kotak yang tadi hidup. Konfigurasi yang stabil (tidak berubah bentuk) adalah tumpukan $ (k, k-1, \dots, 2, 1)$, yang totalnya tepat $T_k$ batu. Untuk $N$ dengan $T_k \le N < T_{k+1}$, proses ini mengendap pada konfigurasi dengan $k$ kotak hidup, dan tepat pada langkah ke-$N$ (saat kotak awal habis) banyaknya kotak hidup sudah bernilai $k$ tersebut.
+
+Jadi $k$ adalah bilangan bulat unik yang memenuhi
+\begin{align*}
+    \dfrac{k(k+1)}{2} \le N < \dfrac{(k+1)(k+2)}{2},
+\end{align*}
+yang setara dengan
+\begin{align*}
+    k(k+1) \le 2N < (k+1)(k+2).
+\end{align*}
+
+Sekarang substitusikan $N = 50^{25}$ pada $2N$:
+\begin{align*}
+    2N = 2\cdot 50^{25} = 100 \cdot 50^{24} = \left(10\cdot 50^{12}\right)^2.
+\end{align*}
+Misalkan $X = 10\cdot 50^{12}$, sehingga $2N = X^2$ dan pertidaksamaannya menjadi
+\begin{align*}
+    k(k+1) \le X^2 < (k+1)(k+2).
+\end{align*}
+Kita uji $k = X-1$:
+\begin{align*}
+    k(k+1) &= (X-1)X = X^2 - X \le X^2, \\
+    (k+1)(k+2) &= X(X+1) = X^2 + X > X^2,
+\end{align*}
+sehingga kedua pertidaksamaan terpenuhi. Karena $k$ tunggal, haruslah $k = X - 1$.
+
+Dengan demikian, banyaknya kotak yang berisi paling sedikit $1$ batu setelah operasi ke-$50^{25}$ adalah
+\begin{align*}
+    \boxed{10\cdot 50^{12} - 1}.
+\end{align*}
+\end{solusi}

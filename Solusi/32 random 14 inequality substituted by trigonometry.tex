@@ -1,9 +1,9 @@
 \input{Soal/32 random 14 inequality substituted by trigonometry}
-\begin{solusi}
-\section{Motivasi}
+\begin{solusi}[Solusi 1.]
+\begin{remark*}[Motivasi]
 Oke, ada $a^2+1$ terus kita mungkin tahu kalau $\tan^2 x + 1 = \sec ^2 x$. Terus di soalnya, $a,b,c$ bilangan real!! yaudah gasekun aja coba euy.
+\end{remark*}
 
-\section{Solusi}[Solusi 1.]
 Dikarenakan $a,b,c$ semuanya bilangan real dan fungsi $\tan$ hasilnya bisa mencakup semua bilangan real, maka masuk akal jika kita lakukan substitusi berikut.
 \begin{align*}
 a &= \tan x \\
@@ -19,21 +19,35 @@ Berarti kita tinggal membuktikan ketaksamaan berikut
 \end{align*}
 Di lain sisi kita punya
 \begin{align*}
-&(\tan x \tan y + \tan y \tan z)(\cos x \cos y \cos z) \\
-&= \sin x \sin y \cos z + \sin y \sin z \cos x \\
-&= \sin y (\sin(x+z))
+(\tan x \tan y + \tan y \tan z)(\cos x \cos y \cos z) = \sin x \sin y \cos z + \sin y \sin z \cos x = \sin y (\sin(x+z))
 \end{align*}
 dan juga kita punya
 \begin{align*}
-&(\tan z \tan x - 1)(\cos x \cos y \cos z) \\
-&= \sin x \sin z \cos y - \cos y \cos x \cos z \\
-&= \cos y (-\cos(x+z))
+(\tan z \tan x - 1)(\cos x \cos y \cos z) = \sin x \sin z \cos y - \cos y \cos x \cos z = \cos y (-\cos(x+z))
 \end{align*}
 oleh karena itu ketaksamaan yang ingin dibuktikan setara dengan
 \begin{align*}
-&\left[ \sin y \sin(x+z) - \cos y \cos(x+z) \right]^2\\
-&= \left[ -\cos(y+x+z) \right]^2 \\
-&\leq 1
+\left[ \sin y \sin(x+z) - \cos y \cos(x+z) \right]^2 = \left[ -\cos(y+x+z) \right]^2 \leq 1
 \end{align*}
 yang jelas benar. Kesamaan dapat terjadi saat $a=b=c=0$.
+\end{solusi}
+
+\begin{solusi}[Solusi 2. (By Valentio Iverson)]
+Setelah bongkar ekspresi di LHS dan RHS lalu kurangi RHS dengan LHS akan didapat
+\begin{align*}
+0 &\le (a+b+c - abc)^2
+\end{align*}
+yang jelas benar. Kesamaan terjadi saat $a=b=c=0$. Terbukti.
+\end{solusi}
+
+\begin{solusi}[Solusi 3. (By M. Irsyad Asrif)]
+    Dengan menggunakan ketaksamaan \textit{Cauchy-Schwarz}, kita punya
+    \begin{align*}
+        (ab+bc+ca-1)^2 &= ((a+b)c + (ab-1))^2\\
+        &\le ((a+b)^2 + (ab-1)^2)(c^2+1) \\
+        &= ((ab)^2+a^2+b^2+1)(c^2+1)\\
+        &= (a^2+1)(b^2+1)(c^2+1)
+    \end{align*}
+    dengan kesamaan terjadi saat $a=b=c=0$. Terbukti.
+
 \end{solusi}

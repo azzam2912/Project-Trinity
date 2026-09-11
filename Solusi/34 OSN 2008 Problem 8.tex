@@ -1,0 +1,46 @@
+\input{Soal/34 OSN 2008 Problem 8}
+\begin{remark*}[Motivasi dan Walkthrough]
+
+\begin{itemize}
+    \item $2+2 = 2\times2$.
+    \item Karena fungsi bulat, maka bisa coba induksi.
+    \item Coba substitusi $m=1$ atau $n=1$ (standar lah ya karena domainnya bulat positif).
+    \item Ada "+1" di akhir harusnya curiga bisa "dihilangkan".
+\end{itemize}
+\end{remark*}
+\begin{solusi}
+
+Misalkan $P(m,n)$ adalah asersi $f(mn)+f(m+n)=f(m)f(n)+1$.
+
+Kita punya
+\begin{align*}
+    P(m,1): f(m)+f(m+1)=f(m)f(1)+1 \implies f(m+1)=(f(1)-1)f(m)+1.
+\end{align*}
+Hal yang cukup menarik untuk diulik adalah nilai $(f(1)-1)f(m)$ di RHS, apakah akan nol atau tidak. Oleh karena itu bisa dibagi kasus seperti berikut.\\
+
+\textbf{Kasus 1: $f(1)=1$}\\
+Maka $f(m+1)=1$ untuk semua $m\in N$. Jadi $f(m)=1$ untuk semua $m\in N$. Cek ke persamaan, masih memenuhi.\\
+
+
+\textbf{Kasus 2: $f(1)\neq 1$ atau $f(1)>1$ karena $f(1)\in N$}\\
+Maka dapat dimisalkan $f(1)-1=k$ untuk suatu bilangan bulat positif konstan $k$. Maka $f(m+1)=kf(m)+1$. 
+Oleh karena itu, dengan induksi mudah didapatkan bahwa 
+\begin{align*}
+    f(m)=k^{m}+k^{m-1}+\cdots+k+1
+\end{align*}
+untuk semua $m\in N$.
+
+Namun, di sisi lain kita punya
+\begin{align*}
+    P(2,2): f(4)+f(4)&=f(2)f(2)+1 \\
+    \implies 2f(4)&=f(2)^2+1\\
+    \implies 2(k^4+k^3+k^2+k+1)&=(k^2+k+1)^2+1\\
+    \implies 2k^4+2k^3+2k^2+2k+2&=k^4+2k^3+3k^2+2k+2\\
+    \implies k^4-k^2&=0\\
+    \implies k^2(k^2-1)&=0\\
+    \implies k&=1 \text{ Karena $k\in N$}.
+\end{align*}
+Berarti didapat $f(m)=1+1+\cdots+1= m+1$ untuk semua $m\in N$. Cek ke persamaan, fungsi ini juga memenuhi.
+
+Dari kedua kasus di atas, maka diperoleh $f(m)=1$ atau $f(m)=m+1$ untuk semua $m\in N$.
+\end{solusi}

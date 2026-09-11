@@ -1,5 +1,4 @@
 \input{Soal/33 Japan Junior MO 2025 Preliminary Problem 5}
-\begin{solusi}
 \begin{remark*}[Motivasi dan Walkthrough]
 
 \begin{itemize}
@@ -16,6 +15,7 @@ Ayo coba kita jalankan operasinya untuk $N=6$ batu sebagai gambaran (angka menya
 \end{align*}
 Perhatikan bahwa kotak awal berisi $6$ batu berkurang $1$ tiap langkah, dan tepat setelah $6$ langkah kotak itu habis. Saat itu banyaknya kotak yang hidup adalah $3$, dan kebetulan $T_3 = \tfrac{3\cdot 4}{2} = 6 = N$.
 \end{remark*}
+\begin{solusi}
 
 Misalkan $N = 50^{25}$. Pandang \emph{kotak awal} yang mula-mula berisi $N$ batu. Pada setiap operasi, setiap kotak yang tidak kosong kehilangan tepat $1$ batu. Dengan demikian, selama masih ada isinya, kotak awal kehilangan tepat $1$ batu per langkah, sehingga kotak awal menjadi kosong \emph{tepat} setelah operasi ke-$N$. Karena kita memang berhenti setelah operasi ke-$N = 50^{25}$, kita cukup menghitung banyaknya kotak yang hidup (kotak yang berisi batu) tepat pada saat itu.
 

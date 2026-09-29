@@ -49,10 +49,11 @@ For a full rebuild, prefer the scripts over bare `pdflatex` calls. Run them from
 | `bash bash-scripts/compile-one.sh DOC [DOC ...]` | build a single entry point (`all` / `problems` / `solutions`, or any other `.tex` path). `--rename` publishes the PDF; `--keep-asy` keeps the extracted per-figure `main-N.asy`/`.pdf` files for debugging one diagram. This is what `compile.sh` calls under the hood. |
 | `bash bash-scripts/clean.sh` | delete leftover build artifacts and per-figure `.asy`/`.pdf` files. `--dir FOLDER` scopes it to one folder, `-n`/`--dry-run` previews, `--pdf` also wipes the published PDFs (off by default, since those are tracked). |
 | `bash bash-scripts/watch.sh NAME_OR_PATH` | live preview: watches one `.tex` (an entry point or a fragment under `Soal/` or `Solusi/`), rebuilds on save, and reopens the PDF in Skim (or the system viewer). `--doc DOC` overrides which entry point it compiles; `--no-open` skips opening a viewer. |
+| `bash bash-scripts/test-newest.sh [ENTRY]` | fast check while drafting: builds only one entry into `test-newest.pdf` (gitignored) instead of all three documents. Default is the entry with the highest number across `Soal/` and `Solusi/`, so a new entry is picked up with no filename edits. Pass a number or filename fragment to preview one entry instead; `--open` opens the PDF. |
 
 Every script supports `-h`/`--help` with fuller usage and examples. The figure-rendering step globs `main-N.asy` files rather than looping a fixed range, so it never misses a diagram and there is no bound to bump as the project grows.
 
-**Compile before you commit.** Editing a `.tex` and not checking that it still builds is an incomplete task. A single malformed environment can take down the whole document, so at minimum run the entry point that includes the file you touched, e.g. `bash bash-scripts/compile-one.sh solutions`.
+**Compile before you commit.** Editing a `.tex` and not checking that it still builds is an incomplete task. A single malformed environment can take down the whole document, so at minimum run the entry point that includes the file you touched, e.g. `bash bash-scripts/compile-one.sh solutions`. While drafting one entry, `bash bash-scripts/test-newest.sh` is enough; run the full build before pushing.
 
 ## Project Architecture
 

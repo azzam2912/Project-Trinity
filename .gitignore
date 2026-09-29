@@ -41,6 +41,9 @@ main-*.asy
 main-*.pdf
 test-*.asy
 test-*.pdf
+
+# Generated wrapper for bash-scripts/test-newest.sh (rebuilt on every run).
+test-newest.tex
 main.pdf
 main-problems.pdf
 main-solutions.pdf

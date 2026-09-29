@@ -126,7 +126,8 @@
 \newcommand{\cycprod}{\prod_{\mathrm{cyc}}}
 \newcommand{\symprod}{\prod_{\mathrm{sym}}}
 \newcommand{\dangle}{\measuredangle}
-\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\tarc}{\mbox{\large$\frown$}}
+\newcommand{\arc}[1]{\stackrel{\tarc}{#1}}
 \newcommand{\CC}{\mathbb C}
 \newcommand{\FF}{\mathbb F}
 \newcommand{\NN}{\mathbb N}
@@ -170,7 +171,7 @@
 		void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
 			{ filldraw(pic, (path) g, fillpen, drawpen); }
 		void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
-			{ filldraw(pic, (path) g, p); }
+			{ fill(pic, (path) g, p); }
 		// some geometry
 		pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
 		pair orthocenter(pair A, pair B, pair C) { return orthocentercenter(A,B,C); }
@@ -229,6 +230,8 @@
 		\usepackage[shortlabels]{enumitem}
 		\usepackage{microtype}
 		\usepackage[obeyFinal,textsize=scriptsize,shadow]{todonotes}
+		\usepackage{tasks}
+		\usepackage{lastpage}
 		\ifazzamhref
 			\usepackage[colorlinks=true]{hyperref}
 		\fi
@@ -240,7 +243,7 @@
 		\author{\small Azzam Labib Hakim \textbar Instagram: @haxuv\_world \textbar Threads: @azzam\_29\_12}
 	\fi
 	\ifazzamstargen
-		\author{\small Star Generation +62 817 769 318 \textbar Instagram: @stargeneration\_id\\ \small\textbar\textbar Azzam L. H. (IG: @azzam\_29\_12)}
+		\author{\small Star Generation +62 817 769 318 \textbar Instagram: @stargeneration\_id\\ \small Azzam L. H. (IG: @azzam\_29\_12)}
 	\fi
 	
 	%%fakesection Hyperref Customization
@@ -468,7 +471,7 @@
 				\chead{}
 				\rhead{\nouppercase{\leftmark}}
 				\lfoot{}
-				\cfoot{\thepage}
+				\cfoot{Page \thepage\ of \pageref{LastPage}}
 				\rfoot{}
 			\fi
 		}
@@ -493,7 +496,7 @@
 			% right header
 			\ohead{\small \thedate\\}
 			% center header
-			\cfoot{\pagemark}
+			\cfoot{Page \thepage\ of \pageref{LastPage}}
 			% left footer
 			\ifoot{}
 			% right footer

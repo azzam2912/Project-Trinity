@@ -110,6 +110,8 @@
 \newcommand{\eps}{\varepsilon}
 \newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
 \providecommand{\alert}{\vocab}
+% Bilingual math term, first use per file: \istilah{bilangan sempurna}{perfect number}
+\newcommand{\istilah}[2]{\textbf{#1} (\textit{#2})}
 \providecommand{\half}{\frac{1}{2}}
 \DeclareMathOperator{\cis}{cis}
 \DeclareMathOperator*{\lcm}{lcm}
@@ -297,6 +299,16 @@
 			bottomline=false, linecolor=Blue!50, backgroundcolor=Blue!5}
 		\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont\small,
 			spaceabove=0pt, spacebelow=0pt, mdframed={style=mdremarkbox}]{remarksolbox}
+		\mdfdefinestyle{mddefbox}{%
+			roundcorner = 10pt, linewidth=1pt, skipabove=12pt, innerbottommargin=9pt,
+			skipbelow=2pt, linecolor=RoyalPurple, nobreak=true, backgroundcolor=RoyalPurple!5}
+		\declaretheoremstyle[headfont=\sffamily\bfseries\color{RoyalPurple},
+			mdframed={style=mddefbox}, headpunct={\\[3pt]}, postheadspace={0pt}]{thmdefbox}
+		\mdfdefinestyle{mdfactbox}{%
+			skipabove=8pt, linewidth=3pt, rightline=false, leftline=true, topline=false,
+			bottomline=false, linecolor=BurntOrange, backgroundcolor=BurntOrange!5}
+		\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont\small,
+			spaceabove=0pt, spacebelow=0pt, mdframed={style=mdfactbox}]{thmfactsbox}
 		\declaretheoremstyle[spaceabove=8pt, spacebelow=16pt]{soalstandar}
 		\declaretheoremstyle[spaceabove=8pt, spacebelow=20pt]{soaljawab}
 		\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont\small, spaceabove=3pt,
@@ -378,12 +390,22 @@
 
 		\declaretheorem[name=Conjecture,sibling=theorem]{conjecture}
 		\declaretheorem[name=Conjecture,numbered=no]{conjecture*}
-		\declaretheorem[name=Definition,sibling=theorem]{definition}
-		\declaretheorem[name=Definition,numbered=no]{definition*}
+		\ifazzammdthm
+			\declaretheorem[style=thmdefbox,name=Definition,sibling=theorem]{definition}
+			\declaretheorem[style=thmdefbox,name=Definition,numbered=no]{definition*}
+		\else
+			\declaretheorem[name=Definition,sibling=theorem]{definition}
+			\declaretheorem[name=Definition,numbered=no]{definition*}
+		\fi
 		\declaretheorem[name=Exercise,sibling=theorem]{exercise}
 		\declaretheorem[name=Exercise,numbered=no]{exercise*}
-		\declaretheorem[name=Fact,sibling=theorem]{fact}
-		\declaretheorem[name=Fact,numbered=no]{fact*}
+		\ifazzammdthm
+			\declaretheorem[style=thmfactsbox,name=Fact,sibling=theorem]{fact}
+			\declaretheorem[style=thmfactsbox,name=Fact,numbered=no]{fact*}
+		\else
+			\declaretheorem[name=Fact,sibling=theorem]{fact}
+			\declaretheorem[name=Fact,numbered=no]{fact*}
+		\fi
 		\declaretheorem[name=Problem,sibling=theorem]{problem}
 		\declaretheorem[name=Problem,numbered=no]{problem*}
 		\declaretheorem[name=Question,sibling=theorem]{ques}

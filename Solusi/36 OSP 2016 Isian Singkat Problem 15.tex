@@ -1,0 +1,61 @@
+\input{Soal/36 OSP 2016 Isian Singkat Problem 15.tex}
+\begin{solusi}
+    Secara leksikografis, atau secara urutan alfabet, MEDAN bisa diurutkan menjadi $A,D,E,M,N$.
+    Permasalahan di soal adalah mencari banyaknya permutasi berbentuk $x_1x_2Ax_4x_5$ di mana $x_1,x_2,x_4,x_5$ adalah huruf-huruf berbeda yang diambil dari $D,E,M,N$. 
+    
+    Secara umum misalkan ada sebuah string $x_1x_2\ldots x_n$ yang terdiri dari huruf-huruf alfabet berbeda $x_1, x_2, \ldots, x_n \in S \subseteq \{A,B,C,\ldots,Z\}$.
+    Disini jelas $x_i$ adalah huruf pada urutan ke-$i$ dari kiri permutasi tersebut.
+    Definisikan $c_i$ sebagai banyaknya huruf anggota $S$ yang lebih kecil secara alfabetis (yang muncul lebih awal dalam urutan alfabet) dari $x_i$.
+
+    Misalkan jika $P = DEAMN$ dengan $S = \{A,D,E,M,N\}$, 
+    maka $c_1 = 0$ karena tidak ada huruf yang lebih kecil dari $x_1=D$. 
+    Nilai $c_2 = 1$ karena hanya ada satu huruf, yaitu $D$, yang lebih kecil dari $x_2=E$.
+    Nilai $c_3 = 2$ karena ada $D$ dan $E$ yang lebih kecil dari $x_3=A$, dan seterusnya.
+    
+    Misalkan $I(x_1x_2\ldots x_n)$ adalah indeks (urutan) dari permutasi $P$ dalam urutan leksikografis dari semua permutasi yang mungkin dari $S$. Maka, indeks $I$ dapat dihitung dengan rumus dalam lemma berikut:
+    \begin{lemma*}
+        $I(x_1x_2\ldots x_n) = 1 + \sum_{i=1}^{n} c_i \cdot (n-i)! = 1 + c_1 \cdot (n-1)! + c_2 \cdot (n-2)! + \ldots + c_n \cdot 0!$
+        
+        \begin{proof}
+            Tinjau masing-masing dari $x_i$ untuk $i=1,2,\ldots,n$.
+            Ada $c_i$ huruf yang lebih kecil dari $x_i$ yang tersisa untuk dipilih pada posisi ke-$i$.
+            Setelah memilih salah satu dari huruf-huruf yang lebih kecil tersebut, ada $(n-i)!$ cara untuk mengatur sisa huruf-huruf setelah $x_i$, 
+            dengan kata lain, ada $(n-i)!$ permutasi untuk $x_{i+1}x_{i+2}\ldots x_n$.
+            Jadi, kontribusi dari setiap $x_i$ terhadap indeks $I$ adalah $c_i \cdot (n-i)!$.
+            Kita jumlahkan kontribusi dari semua $i$ dan menambahkan 1 untuk menghitung indeks dari permutasi pertama, (karena permutasi ini dimulaid ari 1, bukan 0).
+            Terbukti.
+        \end{proof}
+    \end{lemma*}
+
+    Misalkan $P = x_1x_2Ax_4x_5$ dan $P' = x_1'x_2'Ax_4'x_5'$ komplemen dari $P$, yaitu permutasi yang dibentuk dengan "membalik" urutan huruf-huruf dari $P$ selain $A$, atau detailnya sebagai berikut:
+    \begin{enumerate}[(a)]
+    \item D diganti menjadi N,
+    \item E diganti menjadi M,
+    \item N diganti menjadi D,
+    \item M diganti menjadi E
+    \end{enumerate}
+    Sekarang, misalkan $c_i(P)$ adalah banyaknya huruf yang lebih kecil dari $x_i$ dalam permutasi $P$, dan $c_i(P')$ adalah banyaknya huruf yang lebih kecil dari $x_i'$ dalam permutasi komplemen $P'$.
+    
+    \begin{lemma*}
+        $c_1(P)+c_1(P')=5$, $c_2(P)+c_2(P')=4$, $c_3(P)+c_3(P')=0$, dan $c_4(P)+c_4(P')=1$.
+        \begin{proof}
+        Berdasarkan sifat simetri, untuk sebarang himpunan huruf $X \subseteq \{D, E, M, N\}$ dengan banyak anggota $k$, jika diambil huruf $x \in X$ dan komplemennya $x' \in X$, total anggota $X$ yang lebih kecil dari $x$ dan lebih kecil dari $x'$ akan selalu berjumlah $k-1$.
+        \begin{enumerate}
+            \item \textbf{Posisi 1 ($c_1$):} Tersedia huruf A dan 4 huruf dari himpunan \{D, E, M, N\} ($k=4$). Dari himpunan tersebut, jumlah elemen yang lebih kecil adalah $4-1=3$. Karena huruf A juga masih tersedia dan selalu lebih kecil dari huruf apapun di $x_1$, A menyumbang nilai 1 untuk $c_1(P)$ dan 1 untuk $c_1(P')$. Totalnya: $c_1 = 3 + 1 + 1 = 5$.
+            \item \textbf{Posisi 2 ($c_2$):} Tersedia huruf A dan 3 huruf sisa ($k=3$). Jumlah elemen himpunan sisa yang lebih kecil adalah $3-1=2$. Huruf A masih belum terpakai dan menyumbang nilai 1 pada masing-masing permutasi. Totalnya: $c_2 = 2 + 1 + 1 = 4$.
+            \item \textbf{Posisi 3 ($c_3$):} Karena diisi oleh huruf A (abjad terkecil), tidak ada huruf tersedia yang lebih kecil darinya. Totalnya: $c_3(P) + c_3(P') = 0 + 0 = 0$.
+            \item \textbf{Posisi 4 ($c_4$):} Huruf A sudah terpakai, sehingga ketersediaan murni 2 huruf dari himpunan \{D, E, M, N\} ($k=2$). Jumlah elemen yang lebih kecil adalah $2-1=1$. Totalnya: $c_4 = 1$.
+        \end{enumerate}
+        \end{proof}
+    \end{lemma*}
+
+    Dengan menggunakan lemma pertama dan lemma kedua, jumlah indeks untuk sepasang permutasi $P$ dan $P'$ bernilai konstan, yaitu:
+    \begin{align*}
+    I(P) + I(P') &= 1 + 1 + 5(4!) + 4(3!) + 0(2!) + 1(1!)\\
+    I(P) + I(P') &= 2 + 5(24) + 4(6) + 0 + 1 = 2 + 120 + 24 + 1 = 147 
+    \end{align*}
+
+    Karena dari 24 permutasi $DEMN$ terbentuk tepat \textbf{12 pasang} komplementer $(P, P')$, maka hasil penjumlahan keseluruhan indeks $I(P)$ adalah:
+    $12 \times 147 = \boxed{1764}$.
+\end{solusi}
+
